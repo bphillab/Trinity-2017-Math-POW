@@ -1,0 +1,62 @@
+\documentclass[11pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\usepackage{framed}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\geometry{letterpaper}  
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\newenvironment{proof}[1][Proof]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{definition}[1][Definition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{example}[1][Example]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{remark}[1][Remark]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+\newcommand{\qed}{\nobreak \ifvmode \relax \else
+      \ifdim\lastskip<1.5em \hskip-\lastskip
+      \hskip1.5em plus0em minus0.5em \fi \nobreak
+      \vrule height0.75em width0.5em depth0.25em\fi}
+                 % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{epstopdf}
+\usepackage{amsmath}
+\title{Math Problem Of The Week: Problem 1\\Week of August 21, 2017}
+\author{Benjamin Phillabaum\\Allstate Insurance\\Northbrook, IL}
+\begin{document}
+\maketitle
+\newpage
+
+\begin{framed}
+Rectangle I is inscribed in  Rectangle II so each side of Rectangle II contains one and only one vertex of Rectangle I. If Rectangle I measures 1 unit by 2 units and if the area of Rectangle II is $\frac{22}{5}$ units squared, find the perimeter of Rectangle II.
+\end{framed}
+
+Consider that Rectange I is composed of $a,b,c,d$ and Rectangle II is composed of $A,B,C,D$ where $a$ is on the segment $D$ and $A$, $b$ is on the segment $A$ and $B$, etc. Let $\theta$ be the angle $\angle Aab$, then we know that $\angle Aba = \frac{\pi}{2} - \theta$ and finally this ensures that $\theta = \angle Bbc = \angle Ccd = \angle Dda$. Finally let $\bar{ab} = \bar{cd} = \alpha$, $\bar{bc} = \bar{da} = \beta$, $\bar{AB} = \bar{CD} = \gamma$, and $\bar{BC} = \bar{DA} = \delta$. We are looking for $(\gamma,\delta) \sim f(\alpha,\beta,\gamma \delta)$.
+
+\begin{eqnarray*}
+\gamma \delta &=& \Lambda \\
+\gamma &=& \alpha \sin(\theta) + \beta \cos(\theta) \\
+\delta &=& \alpha \cos(\theta) + \beta \sin(\theta) 
+\end{eqnarray*}
+Doing some basic algebra:
+\begin{eqnarray*}
+\gamma \delta = \alpha \beta + \frac{\alpha^2+\beta^2}{2} \sin(2\theta) = \Lambda\\
+\theta = \sin^{-1} (\frac{\Lambda - \alpha \beta}{\frac{\alpha^2+\beta^2}{2}})/2
+\end{eqnarray*}
+Applying a simple half angle formula:
+\begin{eqnarray*}
+\gamma &=& \alpha \sqrt{\frac{1-\sqrt{1- (\frac{\Lambda - \alpha \beta}{\frac{\alpha^2+\beta^2}{2}})^2}}{2}}+\beta \sqrt{\frac{1+\sqrt{1- (\frac{\Lambda - \alpha \beta}{\frac{\alpha^2+\beta^2}{2}})^2}}{2}}\\
+\delta &=&\beta \sqrt{\frac{1-\sqrt{1- (\frac{\Lambda - \alpha \beta}{\frac{\alpha^2+\beta^2}{2}})^2}}{2}}+\alpha \sqrt{\frac{1+\sqrt{1- (\frac{\Lambda - \alpha \beta}{\frac{\alpha^2+\beta^2}{2}})^2}}{2}}\\
+\texttt{Perimeter} &=& 2(\gamma+\delta) = 2(\alpha+\beta)\left( \sqrt{\frac{1-\sqrt{1- (\frac{\Lambda - \alpha \beta}{\frac{\alpha^2+\beta^2}{2}})^2}}{2}}+ \sqrt{\frac{1+\sqrt{1- (\frac{\Lambda - \alpha \beta}{\frac{\alpha^2+\beta^2}{2}})^2}}{2}}\right)
+\end{eqnarray*}
+
+Plugging in the requisite numbers gives me $\frac{42}{5}$.
+$\square$
+\end{document}
