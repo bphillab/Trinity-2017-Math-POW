@@ -1,0 +1,64 @@
+\documentclass[11pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\usepackage{framed}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\geometry{letterpaper}  
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\newenvironment{proof}[1][Proof]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{definition}[1][Definition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{example}[1][Example]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{remark}[1][Remark]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+\newcommand{\qed}{\nobreak \ifvmode \relax \else
+      \ifdim\lastskip<1.5em \hskip-\lastskip
+      \hskip1.5em plus0em minus0.5em \fi \nobreak
+      \vrule height0.75em width0.5em depth0.25em\fi}
+                 % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{epstopdf}
+\usepackage{amsmath}
+\title{Math Problem Of The Week: Problem 2\\Week of September 5, 2017}
+\author{Benjamin Phillabaum\\Northbrook, IL}
+\begin{document}
+\maketitle
+\newpage
+
+\begin{framed}
+Assume that $x$, $y$, and $z$ are all positive, real numbers that satisfy the system of equations
+\begin{eqnarray*}
+x+y+xy&=&8\\
+y+z+yz&=&15\\
+x+z+xz&=&35
+\end{eqnarray*}
+Determine the value of $x+y+z+xyz$.
+\end{framed}
+I begin by noting that the above expressions can be simplified notationally to 
+\begin{eqnarray*}
+x_i + x_j +x_i x_j &=& \lambda_k\\
+(x_i+1) (x_j+1) &=& \lambda_k+1
+\end{eqnarray*}
+for $i\neq j \neq k$. This allows me to deduce each of the $x_i$:
+\begin{equation*}
+x_i = \sqrt{\frac{(\lambda_k+1)(\lambda_j+1)}{\lambda_i + 1}}-1
+\end{equation*}
+Thus
+\begin{eqnarray*}
+x &=& \frac{7}{2}\\
+y &=&1\\
+z&=&7 \\
+x+y+z+xyz &=& 36
+\end{eqnarray*}
+
+$\square$
+\end{document}
